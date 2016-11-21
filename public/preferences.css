@@ -1,0 +1,39 @@
+/* Style the list */
+h1{
+    text-align: center;
+}
+
+
+input:focus, textarea:focus {
+    border:1px solid #97d6eb;
+    }
+.submit {
+    /* background:url(images/submit.png); */
+    width:2em;
+    height:1em;
+    text-align: center;
+    /* text-indent:-9999px; */
+    border:none;
+    margin-top:2em;
+    cursor:pointer;
+}
+
+/* Styles the submit hover */   
+.submit:hover {
+    color:#fff;
+    background-color: #216182;
+    opacity:0.9;
+}
+
+section{
+    width:100%;
+    float:left;
+    border: 1px solid black;
+}
+#organization1{
+    width:50%;
+    border: 1px solid black;
+}
+
+
+

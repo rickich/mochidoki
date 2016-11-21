@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            mochidoki sample
+        </title>
+        <meta charset = "utf-8">
+        <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+        <link rel="stylesheet" type="text/css" href="nav.css">
+        <link rel="stylesheet" type="text/css" href="order.css">
+        <link rel="stylesheet" type="text/css" href="table.css">
+    </head>
+    <body>
+    <nav id="topnav">
+    <ul class="topnav" id="myTopnav">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="placeOrder.html">Order</a></li>
+      <li><a href="https://mochidoki.com">Website</a></li>
+      <li><a href="preferences.html">Preferences</a></li>
+      <button id='btnLogout' class='btn btn-action'>Log Out</button>
+    <script src='dashboard.js'></script>
+    </ul>
+</nav>
+<h1 style="font-family:'Roboto'"">Place Order</h1>
+<button id="last_order" class="btn btn-action">Open last order</button><br>
+<section id='informations'>
+<div id='billTo'>
+  <p id='bill_ship_header'>Bill To</p>
+  <div id="button_div">
+    <button id='org1' class='btn btn-action'>longass name</button>
+    <button id='org2' class='btn btn-action'>Org2</button>
+    <button id='org3' class='btn btn-action'>Org3</button>
+    </div>
+    <div id='info'>
+      <p>Company Name</p>
+      <p>Contact Person</p>
+      <p>Address</p>
+      <p>City</p>
+      <p>State</p>
+      <p>Zipcode</p>
+      <p>E-mail</p>
+      <p>Telephone</p>
+    </div>
+</div>
+<div id="shipTo">
+  <p id='bill_ship_header'>Ship To</p>
+  <input id='same' type='checkbox' name='same' value="same">Same as Bill to
+  <div id="button_div">
+  <button id='org1' class='btn btn-action'>Org1</button>
+  <button id='org2' class='btn btn-action'>Org2</button>
+  <button id='org3' class='btn btn-action'>Org3</button>
+  </div>
+  <div id='info'>
+      <p>Company Name</p>
+      <p>Contact Person</p>
+      <p>Address</p>
+      <p>City</p>
+      <p>State</p>
+      <p>Zipcode</p>
+      <p>E-mail</p>
+      <p>Telephone</p>
+    </div>
+</div>
+</section>
+<section id='detail_section'>
+<div >
+<p id="menu_header">Details</p>
+<table>
+  <thead>
+      <tr>
+          <th>Flavors</th>
+          <th>Packs (25pcs)</th>
+      </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th style="text-align: right">Total</th>
+      <th id="total_with_unit">Packs</th>
+      <script>
+        function total_pcs(){
+          var menu=document.getElementById('details')
+          var menu_count=menu.cols.length;
+          var total_with_unit="";
+          var total=0;
+          for(i=1;i<=menu_count;i++){
+            if(menu.rows[1].cells.item(i).innerHTML!=null){
+              total+=menu.rows[1].cells.item(i).innerHTML;
+            }
+          }
+          total_with_unit=total+'Packs';
+          document.getElementById('total_with_unit').innerHTML=total_with_unit;
+        }
+      </script>
+      
+    </tr>
+  </tfoot>
+  <tbody>
+
+    <tr>
+      <td>Azuki Red Bean</td>
+      <td><input type="text" id="ARB"> Packs</td>
+    </tr>
+    <tr>
+      <td>Black Sesame</td>
+      <td><input type="text" id="BS"> Packs</td>
+    </tr>
+    <tr>
+      <td>Cinnamon Eggnog</td>
+      <td><input type="text" id="CE"> Packs</td>
+    </tr>
+    <tr>
+      <td>Double Chocolate Chip</td>
+      <td><input type="text" id="DCC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Frothy Chocolate</td>
+      <td><input type="text" id="FC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Ginger Zing</td>
+      <td><input type="text" id="GZ"> Packs</td>
+    </tr>
+    <tr>
+      <td>Hazelnut</td>
+      <td><input type="text" id="HN"> Packs</td>
+    </tr>
+    <tr>
+      <td>Lychee Colade</td>
+      <td><input type="text" id="LC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Mandarin Orange Cream</td>
+      <td><input type="text" id="MOC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Mango Thai Basil</td>
+      <td><input type="text" id="MTB"> Packs</td>
+    </tr>
+    <tr>
+      <td>Matcha Green Tea Choc. Chip</td>
+      <td><input type="text" id="MGTCC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Matcha Green Tea Classic</td>
+      <td><input type="text" id="MGTC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Mochaccino Chip</td>
+      <td><input type="text" id="MC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Passionfruit</td>
+      <td><input type="text" id="PF"> Packs</td>
+    </tr>
+    <tr>
+      <td>Pumpkin Spice</td>
+      <td><input type="text" id="PS"> Packs</td>
+    </tr>
+    <tr>
+      <td>Raspberry White Choc. Crunch</td>
+      <td><input type="text" id="RWCC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Salted Caramel</td>
+      <td><input type="text" id="SC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Strawberry</td>
+      <td><input type="text" id="SB"> Packs</td>
+    </tr>
+    <tr>
+      <td>Thai Iced Tea</td>
+      <td><input type="text" id="TIT"> Packs</td>
+    </tr>
+    <tr>
+      <td>Toasted Coconut</td>
+      <td><input type="text" id="TC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Vanilla Chocolate Chip</td>
+      <td><input type="text" id="VCC"> Packs</td>
+    </tr>
+    <tr>
+      <td>Yuzu Mojito</td>
+      <td><input type="text" id="YM"> Packs</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<input type="text" class="comment" placeholder="Additional Comment">
+</section>
+<button id="generate_invoice">Generate Invoice</button>
+</body>
+</html>

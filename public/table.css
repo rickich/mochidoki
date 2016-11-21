@@ -1,0 +1,45 @@
+h1{
+	text-align:center;
+}
+table {
+	margin-left: auto;
+	margin-right: auto;
+	table-layout: auto;
+  	width: 80%;
+	border-collapse: separate;
+	border-spacing: 0;
+	color: #4a4a4d;
+	font-family: 'Roboto';
+	overflow-wrap:auto;
+}
+th,
+td {
+  padding: .6em;
+  vertical-align: middle;
+}
+thead {
+  text-align: center;
+  vertical-align: middle;
+  background: #333;
+  color: white;
+  padding:1em;
+}
+th:first-child {
+  text-align: center;
+}
+tbody tr:nth-child(even) {
+  background: #f0f0f2;
+}
+td {
+  border-bottom: 1px solid #cecfd5;
+  border-right: 1px solid #cecfd5;
+}
+td:first-child {
+  border-left: 1px solid #cecfd5;
+}
+tfoot {
+  background-color:#555555;
+  color:white;
+  text-align: right;
+}
+
